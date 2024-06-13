@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Dashboard - Device Management{% endblock %}
+{% block content %}
+    <div data-page="dashboard">
+        <h2>Welcome to the Device Management Dashboard</h2>
+        <div id="deviceInfo" class="mt-4">
+            <!-- Device info will be displayed here using Bootstrap cards -->
+        </div>
+    </div>
+{% endblock %}
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/common.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script_dashboard.js') }}"></script>
+{% endblock %}

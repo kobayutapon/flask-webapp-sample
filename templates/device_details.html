@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Device Details - Device Management{% endblock %}
+{% block content %}
+    <div data-page="device_details">
+        <h2>Device Details</h2>
+        <div id="deviceDetails" class="mt-4">
+            <!-- Device details will be displayed here -->
+        </div>
+    </div>
+{% endblock %}
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/common.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script_device_details.js') }}"></script>
+{% endblock %}

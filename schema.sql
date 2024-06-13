@@ -1,0 +1,23 @@
+CREATE TABLE user (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT NOT NULL UNIQUE,
+    password TEXT NOT NULL
+);
+
+CREATE TABLE device (
+    id TEXT PRIMARY KEY,
+    type TEXT NOT NULL,
+    location TEXT NOT NULL,
+    name TEXT NOT NULL,
+    user_id INTEGER NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES user (id) ON DELETE CASCADE
+);
+
+CREATE TABLE device_data (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    device_id TEXT NOT NULL,
+    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+    temperature REAL NOT NULL,
+    humidity REAL NOT NULL,
+    FOREIGN KEY (device_id) REFERENCES device (id) ON DELETE CASCADE
+);

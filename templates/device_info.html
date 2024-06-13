@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}Device Info - Device Management{% endblock %}
+{% block content %}
+    <div data-page="device_info">
+        <h2>Device Information</h2>
+        <div id="deviceDetails" class="mt-4">
+            <!-- Device details will be displayed here -->
+        </div>
+        <div id="temperatureCard" class="card mt-4">
+            <div class="card-header">Temperature</div>
+            <div class="card-body">
+                <p id="temperature"></p>
+            </div>
+        </div>
+        <div id="humidityCard" class="card mt-4">
+            <div class="card-header">Humidity</div>
+            <div class="card-body">
+                <p id="humidity"></p>
+            </div>
+        </div>
+        <div id="windSpeedCard" class="card mt-4">
+            <div class="card-header">Wind Speed</div>
+            <div class="card-body">
+                <p id="windSpeed"></p>
+            </div>
+        </div>
+        <div id="windDirectionCard" class="card mt-4">
+            <div class="card-header">Wind Direction</div>
+            <div class="card-body">
+                <svg id="windDirection" width="200" height="200"></svg>
+            </div>
+        </div>
+        <div id="mapCard" class="card mt-4">
+            <div class="card-header">Location</div>
+            <div class="card-body">
+                <div id="map" style="height: 200px;"></div>
+            </div>
+        </div>
+        <div id="graphCard" class="card mt-4">
+            <div class="card-header">24-hour Data</div>
+            <div class="card-body">
+                <div id="graph"></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/common.js') }}"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+    <script src="{{ url_for('static', filename='js/script_device_info.js') }}"></script>
+{% endblock %}
